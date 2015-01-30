@@ -1,0 +1,32 @@
+<!-- Make sure all your bars are the first things in your <body> -->
+<header class="bar bar-nav">
+	<a class="icon icon-trash pull-right" id="clear"></a>
+    <h1 class="title">TimeTracker</h1>
+</header>
+
+<!-- Wrap all non-bar HTML in the .content div (this is actually what scrolls) -->
+<div class="content">
+	<div class="content-padded">
+		<% if(current == null) { %>
+			<button class="btn btn-positive btn-block" id="rec">Start</button>
+		<% } else { %>
+			<button class="btn btn-negative btn-block" id="rec">Stop</button>
+		<% } %>
+		<p id="info" style="display:none">Time tracking started <span id="duration">a few seconds ago</span>...</p>
+	</div>
+
+	<ul class="table-view">
+		<% for(var i in models) { %>
+			<li class="table-view-cell">
+			    <a class="navigate-right">
+			     	<%= moment(models[i].get("start")).format("L") %>
+			     	<p>
+			     		<%= moment(models[i].get("start")).format("HH:mm") %> to
+			     		<%= moment(models[i].get("stop")).format("HH:mm") %>
+			     	</p>
+			     	<span class="badge badge-primary"><%= moment(models[i].get("stop")).diff(models[i].get("start"), "minutes") / 60 %> hrs</span>
+			    </a>
+		  	</li>
+		<% } %>
+	</ul>
+</div>
