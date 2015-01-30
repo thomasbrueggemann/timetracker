@@ -1,5 +1,5 @@
 # TimeTracker
-Simple phonegap time tracking app
+Simple phonegap time tracking app. Nothing special - I just needed something super simple here.
 
 Avaiable on the Google PlayStore https://play.google.com/store/apps/details?id=com.thomasbrueggemann.timetracker
 
