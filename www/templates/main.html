@@ -24,7 +24,7 @@
 			     		<%= moment(models[i].get("start")).format("HH:mm") %> to
 			     		<%= moment(models[i].get("stop")).format("HH:mm") %>
 			     	</p>
-			     	<span class="badge badge-primary"><%= moment(models[i].get("stop")).diff(models[i].get("start"), "minutes") / 60 %> hrs</span>
+			     	<span class="badge badge-primary"><%= (Math.round((moment(models[i].get("stop")).diff(models[i].get("start"), "minutes") / 60) * 2) / 2).toFixed(1) %> hrs</span>
 			    </a>
 		  	</li>
 		<% } %>
